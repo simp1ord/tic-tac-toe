@@ -1,8 +1,8 @@
 module Gameplay
     def player_one_turn
       puts "Player One's Move, where do you want to place x?"
-      x_placement = gets.chomp.to_i
-      if x_placement < 10 && x_placement > 0
+      @x_placement = gets.chomp.to_i
+      if @x_placement < 10 && @x_placement > 0
           case x_placement
           when 1
             if $row_one[0] == ' '
@@ -56,9 +56,9 @@ module Gameplay
     end
     def player_two_turn
       puts "Player Two's Move, where do you want to place o?"
-      o_placement = gets.chomp.to_i
-      if o_placement < 10 && o_placement > 0
-          case o_placement
+      @o_placement = gets.chomp.to_i
+      if @o_placement < 10 && @o_placement > 0
+          case @o_placement
           when 1
             if $row_one[0] == ' '
             $row_one.delete_at(0)
